@@ -1,3 +1,5 @@
+#+OPTIONS: ^:nil
+
 * Homebrew
   [[https://brew.sh/][homebrew site]]
 
@@ -9,21 +11,42 @@
 
   add 2 rules to switch left fn key and left control
 
+* bash_profile and bashrc
+
+  in your .bash_profile (new file) add the following line :
+
+  if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+
+  create a .bash rc file (we need this later for nvm to add its stuff to)
+
+#+NAME: create .bashrc file
+#+BEGIN_SRC bash
+touch .bashrc
+#+END_SRC
+
 * iTerm2
 **  emacs keyboard setup
     [[https://www.emacswiki.org/emacs/EmacsForMacOS#toc26][emacs-wiki search for iTerm2]]
 
     In iTerm2 go to Preferences > Keys
-    Under Remap Modifier Keys, change Left Command Key to behave like Right Option
-    Then go to Preferences > Profiles > $YourProfile > Keys
-    On the bottom right of the screen click “Right option key acts as: +Esc”
 
+    Under Remap Modifier Keys, change Left Command Key to behave like Right Option
+
+    Then go to Preferences > Profiles > $YourProfile > Keys
+
+    On the bottom right of the screen click “Right option key acts as: +Esc”
 
 * git and git autocomplete
   [[https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion][instructions]]
 
 * node
+** install nvm (node version manager)
+#+NAME: install nvm
+#+BEGIN_SRC bash
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+  nvm install node
+#+END_SRC
+
 
 * spectacle
   [[https://www.spectacleapp.com/][spectacle site]]

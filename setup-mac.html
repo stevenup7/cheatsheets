@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>setup-mac</title>
-<!-- 2017-10-31 Tue 11:19 -->
+<!-- 2017-10-31 Tue 11:42 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Upritchard" />
@@ -145,17 +145,23 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1">1. Homebrew</a></li>
 <li><a href="#sec-2">2. Emacs</a></li>
 <li><a href="#sec-3">3. karabiner</a></li>
-<li><a href="#sec-4">4. iTerm2</a>
+<li><a href="#sec-4">4. bash_profile and bashrc</a></li>
+<li><a href="#sec-5">5. iTerm2</a>
 <ul>
-<li><a href="#sec-4-1">4.1. emacs setup</a></li>
+<li><a href="#sec-5-1">5.1. emacs keyboard setup</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">5. git and git autocomplete</a></li>
-<li><a href="#sec-6">6. node</a></li>
-<li><a href="#sec-7">7. spectacle</a></li>
+<li><a href="#sec-6">6. git and git autocomplete</a></li>
+<li><a href="#sec-7">7. node</a>
+<ul>
+<li><a href="#sec-7-1">7.1. install nvm (node version manager)</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. spectacle</a></li>
 </ul>
 </div>
 </div>
+
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> Homebrew</h2>
 <div class="outline-text-2" id="text-1">
@@ -188,55 +194,95 @@ add 2 rules to switch left fn key and left control
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> iTerm2</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> bash_profile and bashrc</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> emacs setup</h3>
-<div class="outline-text-3" id="text-4-1">
+<p>
+in your .bash_profile (new file) add the following line :
+</p>
+
+<p>
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+</p>
+
+<p>
+create a .bash rc file (we need this later for nvm to add its stuff to)
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash" id="create-.bashrc-file">touch .bashrc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> iTerm2</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> emacs keyboard setup</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
 <a href="https://www.emacswiki.org/emacs/EmacsForMacOS#toc26">emacs-wiki search for iTerm2</a>
 </p>
 
 <p>
 In iTerm2 go to Preferences &gt; Keys
+</p>
+
+<p>
 Under Remap Modifier Keys, change Left Command Key to behave like Right Option
+</p>
+
+<p>
 Then go to Preferences &gt; Profiles &gt; $YourProfile &gt; Keys
+</p>
+
+<p>
 On the bottom right of the screen click “Right option key acts as: +Esc”
 </p>
 </div>
 </div>
 </div>
 
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> git and git autocomplete</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> git and git autocomplete</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 <a href="https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion">instructions</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> node</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh">https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh</a> | bash
-</p>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> node</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> install nvm (node version manager)</h3>
+<div class="outline-text-3" id="text-7-1">
+<div class="org-src-container">
+
+<pre class="src src-bash" id="install-nvm">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+nvm install node
+</pre>
+</div>
+</div>
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> spectacle</h2>
-<div class="outline-text-2" id="text-7">
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> spectacle</h2>
+<div class="outline-text-2" id="text-8">
 <p>
-<a href="https://www.spectacleapp.com/">spectacle site</a></p>
+<a href="https://www.spectacleapp.com/">spectacle site</a>
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Upritchard</p>
-<p class="date">Created: 2017-10-31 Tue 11:19</p>
+<p class="date">Created: 2017-10-31 Tue 11:42</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
