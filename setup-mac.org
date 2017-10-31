@@ -1,0 +1,29 @@
+* Homebrew
+  [[https://brew.sh/][homebrew site]]
+
+* Emacs
+  brew install emacs --with-coca
+
+* karabiner
+  https://pqrs.org/osx/karabiner/
+
+  add 2 rules to switch left fn key and left control
+
+* iTerm2
+**  emacs keyboard setup
+    [[https://www.emacswiki.org/emacs/EmacsForMacOS#toc26][emacs-wiki search for iTerm2]]
+
+    In iTerm2 go to Preferences > Keys
+    Under Remap Modifier Keys, change Left Command Key to behave like Right Option
+    Then go to Preferences > Profiles > $YourProfile > Keys
+    On the bottom right of the screen click “Right option key acts as: +Esc”
+
+
+* git and git autocomplete
+  [[https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion][instructions]]
+
+* node
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+
+* spectacle
+  [[https://www.spectacleapp.com/][spectacle site]]
